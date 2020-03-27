@@ -1,0 +1,8 @@
+CARICA/SCARICA CONDENSATORE (CON ARDUINO E OSCILLOSCOPIO):
+-> vedere se utile
+-> resistenza adottata nominale = 701 +- 6 Ohm
+-> capacità condensatore nominale =  0.10 +- 0.02 uF
+-> deltat = intervallo nominale = 700 us
+-> tau atteso = 0.070 +- 0.014 s
+-> tau fit = 94.9 +- 0.2 ms
+-> C fit = 0.135 +- 0.001 uF
