@@ -1,2 +1,2 @@
 # FFT
-Fast Fourier Transform applications
+Fast Fourier Transform algoritms and description
