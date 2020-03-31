@@ -1,0 +1,14 @@
+#files    directories_files    boolean_variables_files
+"DatiCond_Charge.txt"    "data\ESP_4"    "False"
+#DatiCond_Discharge.txt    data\ESP_4    False
+#datiardu.txt    data\ESP_5    False
+#datiardu_001.txt    data\ESP_5    False
+#datilunghiquadra.txt    data\ESP_5    False
+#datilunghisinusoidale.txt    data\ESP_5    False
+#datilunghitriangolare.txt    data\ESP_5    False
+#20hz.txt    data\ESP_6\dati_punto2_quadra    False
+#50hz.txt    data\ESP_6\dati_punto2_quadra    False
+#100hz.txt    data\ESP_6\dati_punto2_quadra    False
+#150hz.txt    data\ESP_6\dati_punto2_quadra    False
+#200hz.txt    data\ESP_6\dati_punto2_quadra    False
+#300hz.txt    data\ESP_6\dati_punto2_quadra    False

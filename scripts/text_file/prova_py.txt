@@ -1,0 +1,111 @@
+files_name = numpy.array(["DatiCond_Charge.txt",\#0
+                          "DatiCond_Discharge.txt", \#1
+                          "datiardu.txt",\#2
+                          "datiardu_001.txt",\#3
+                          "datilunghiquadra.txt",\#4
+                          "datilunghisinusoidale.txt",\#5
+                          "datilunghitriangolare.txt",\#6
+                          "20hz.txt",\#7
+                          "50hz.txt",\#8
+                          "100hz.txt",\#9
+                          "150hz.txt",\#10
+                          "200hz.txt",\#11
+                          "300hz.txt",\#12
+                          "20hz.txt",\#13
+                          "50hz.txt",\#14
+                          "100hz.txt",\#15
+                          "150hz.txt",\#16
+                          "200hz.txt",\#17
+                          "300hz.txt",\#18
+                          "20hz.txt",\#19
+                          "50hz.txt",\#20
+                          "100hz.txt",\#21
+                          "150hz.txt",\#22
+                          "200hz.txt",\#23
+                          "300hz.txt",\#24
+                          "quadra_50hz.txt",\#25
+                          "quadra_100hz.txt",\#26
+                          "sin_50.txt",\#27
+                          "sin_100.txt",\#28
+                          "tri_50.txt",\#29
+                          "tri_100.txt"\ #30
+                          ])
+
+
+files_dir = numpy.array(["data\ESP_4",\#0
+                         "data\ESP_4",\#1
+                         "data\ESP_5",\#2
+                         "data\ESP_5",\#3
+                         "data\ESP_5",\#4
+                         "data\ESP_5",\#5
+                         "data\ESP_5",\#6
+                         "data\ESP_6\dati_punto2_quadra",\#7
+                         "data\ESP_6\dati_punto2_quadra",\#8
+                         "data\ESP_6\dati_punto2_quadra",\#9
+                         "data\ESP_6\dati_punto2_quadra",\#10
+                         "data\ESP_6\dati_punto2_quadra",\#11
+                         "data\ESP_6\dati_punto2_quadra",\#12
+                         "data\ESP_6\dati_punto2_sin",\#13
+                         "data\ESP_6\dati_punto2_sin",\#14
+                         "data\ESP_6\dati_punto2_sin",\#15
+                         "data\ESP_6\dati_punto2_sin",\#16
+                         "data\ESP_6\dati_punto2_sin",\#17
+                         "data\ESP_6\dati_punto2_sin",\#18
+                         "data\ESP_6\dati_punto2_triangolare",\#19
+                         "data\ESP_6\dati_punto2_triangolare",\#20
+                         "data\ESP_6\dati_punto2_triangolare",\#21
+                         "data\ESP_6\dati_punto2_triangolare",\#22
+                         "data\ESP_6\dati_punto2_triangolare",\#23
+                         "data\ESP_6\dati_punto2_triangolare",\#24
+                         "data\ESP_6\lunghi",\#25
+                         "data\ESP_6\lunghi",\#26
+                         "data\ESP_6\lunghi",\#27
+                         "data\ESP_6\lunghi",\#28
+                         "data\ESP_6\lunghi",\#29
+                         "data\ESP_6\lunghi",\#30
+                         "data\iorestoacasa_dati_per_esercizio"\#91+30
+                         ])
+for i in range(91-30):
+    print("\"data\iorestoacasa_dati_per_esercizio\" \# %f" %(31+i))
+
+
+files_bo = numpy.array([False,\#0
+                        False,\#1
+                        False,\#2
+                        False,\#3
+                        False,\#4
+                        False,\#5
+                        False,\#6
+                        False,\#7
+                        False,\#8
+                        False,\#9
+                        False,\#10
+                        False,\#11
+                        False,\#12
+                        False,\#13
+                        False,\#14
+                        False,\#15
+                        False,\#16
+                        False,\#17
+                        False,\#18
+                        False,\#19
+                        False,\#20
+                        False,\#21
+                        False,\#22
+                        False,\#23
+                        False,\#24
+                        False,\#25
+                        False,\#26
+                        False,\#27
+                        False,\#28
+                        False,\#29
+                        False,\#30
+                        False,\#31
+                        False,\#32
+                        False,\#33
+                        False,\#34
+                        False,\#35
+                        False,\#36
+                        False,\#37
+                        False\#91+30
+                        ])
