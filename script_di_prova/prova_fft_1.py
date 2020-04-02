@@ -53,7 +53,7 @@ print(math.log(len(t), 2))
 
 print(math.log(len(transf), 2))
 
-##Grafico di potenza
+##Spettro di potenza
 
 ptransf = (transf)**2
 
