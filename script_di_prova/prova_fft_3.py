@@ -1,8 +1,49 @@
 from LIB import *
 
+#nota converti in secondi
+
+##onda quadra
+
 Directory = "data/ESP_5/"
 
 FileName = "datilunghiquadra.txt"
+
+##onda sinusoidale
+
+#Directory = "data/ESP_5/"
+
+#FileName = "datilunghisinusoidale.txt"
+
+##onda triangolare
+
+#Directory = "data/ESP_5/"
+
+#FileName = "datilunghitriangolare.txt"
+
+##onda sinusoidale più corta
+
+#Directory = "data/ESP_5/"
+
+#FileName = "datiardu_001.txt"
+
+##
+
+#Directory = "data/ESP_5/"
+
+#FileName = "datiardu.txt"
+
+##
+
+#Directory = "data/iorestoacasa_dati_per_esercizio/"
+
+#FileName = "sin11.txt"
+
+##
+
+#Directory = "data/iorestoacasa_dati_per_esercizio/"
+
+#FileName = "smorz1.txt"
+
 
 t, y = pylab.loadtxt(Directory+FileName, unpack = True)
 
@@ -49,6 +90,22 @@ g2.set_xlabel("Frequenza [Hz]")
 
 g2.set_ylabel("Ampiezza [u.a.]")
 
-pylab.errorbar(f, tra)
+g2.errorbar(f, tra)
 
 pylab.show()
+
+dtime = (max(t) - min(t))/(len(t) - 1)
+
+print(dtime)
+
+#il range di frequenza va da 0 a 1/(2dtime)
+
+frequency = numpy.linspace(0., 1./(dtime * 2), len(tra))
+
+pylab.errorbar(frequency, tra)
+
+pylab.semilogy()
+
+pylab.show()
+
+#4.76*10^(-5) -> T = 2* 10^4---30515-679 = Ttipo va bastante bien!
