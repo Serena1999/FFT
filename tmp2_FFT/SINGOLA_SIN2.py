@@ -31,29 +31,29 @@ FFOCUS = [0., 400.]
 
 # -->boolean variables::
 # [bool_single_time = True to visualize the function of time only]
-bool_single_time = False
+bool_single_time = True
 # [bool_single_FFT = True to visualize the FFT only]
-bool_single_FFT = False
+bool_single_FFT = True
 # [bool_double_graph = True to visualize the function of the time and of the
 #  frequency together]
-bool_double_graph = False
+bool_double_graph = True
 # [bool_lin = True to visualize the FFT (linear scale: y)]
-bool_lin = False
+bool_lin = True
 # [bool_log = True to visualize the FFT with pylab.semilogy()]
-bool_log = False
+bool_log = True
 # [bool_dB = True to viualize the FFT in dB]
-bool_dB = False
+bool_dB = True
 # [bool_filter_low = True to use the Low Pass Filter]
 bool_filter_low = True
 # [bool_filter_high = True to use the High Pass Filter]
-bool_filter_high = False
+bool_filter_high = True
 # [bool_focus_FFT = True to show only a part of frequencies]
 bool_focus_FFT = False
 # [bool_window = True to use a Window to give a weight to the input array in
 # FFT]
-bool_window = False #!
+bool_window = True
 # [bool_fit = True to do the best fit]
-bool_fit = False
+bool_fit = True
 
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
 #                             FUNCTIONS                               #
@@ -111,6 +111,12 @@ if(bool_double_graph):
         g1.errorbar(t, y, dy, dt, marker = '.', linestyle = '-', color = 'black')
         g1.set_title("Onda sinusoidale")
         g2.set_title("FFT")
+        g1.grid(color = "gray")
+        g1.grid(b=True, which='major', color='#666666', linestyle='-')
+        g1.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
+        g2.grid(color = "gray")
+        g2.grid(b=True, which='major', color='#666666', linestyle='-')
+        g2.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
         g1.set_xlim(TLIM)
         g1.set_xlabel("Tempo [s]")
         g1.set_ylabel("d.d.p. [digit]")
@@ -120,6 +126,8 @@ if(bool_double_graph):
             g2.set_xlim(FLIM)
         g2.set_xlabel("Frequenza [Hz]")
         g2.set_ylabel("Ampiezza [u.a.]")
+        g1.minorticks_on()
+        g2.minorticks_on()
         g2.errorbar(f, tra, linestyle = '-', color = 'black')
         pylab.show()
     if(bool_log):
@@ -139,6 +147,14 @@ if(bool_double_graph):
         g2.set_xlabel("Frequenza [Hz]")
         g2.set_ylabel("Ampiezza [u.a.]")
         g2.errorbar(f, tra, linestyle = '-', color = 'black')
+        g1.minorticks_on()
+        g2.minorticks_on()
+        g1.grid(color = "gray")
+        g1.grid(b=True, which='major', color='#666666', linestyle='-')
+        g1.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
+        g2.grid(color = "gray")
+        g2.grid(b=True, which='major', color='#666666', linestyle='-')
+        g2.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
         g2.semilogy()
         pylab.show()
     if(bool_dB):
@@ -157,48 +173,72 @@ if(bool_double_graph):
             g2.set_xlim(FLIM)
         g2.set_xlabel("Frequenza [Hz]")
         g2.set_ylabel("Ampiezza [u.a.]")
+        g1.minorticks_on()
+        g2.minorticks_on()
+        g1.grid(color = "gray")
+        g1.grid(b=True, which='major', color='#666666', linestyle='-')
+        g1.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
+        g2.grid(color = "gray")
+        g2.grid(b=True, which='major', color='#666666', linestyle='-')
+        g2.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
         g2.errorbar(f, tradB, linestyle = '-', color = 'black')
         pylab.show()            
 if(bool_single_time):
     pylab.errorbar(t, y, dy, dt, marker = '.', linestyle = '-', color = 'black')
     pylab.title("Onda sinusoidale")
     pylab.xlim(TLIM)
+    pylab.minorticks_on()
+    pylab.grid(color = "gray")
+    pylab.grid(b=True, which='major', color='#666666', linestyle='-')
+    pylab.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)    
     pylab.xlabel("Tempo [s]")
     pylab.ylabel("d.d.p. [digit]")
     pylab.show()
 if(bool_single_FFT):
     if(bool_lin):
-        pylab.errorbar(f, tra, marker = '.', linestyle = '-', color = 'black')
+        pylab.errorbar(f, tra, linestyle = '-', color = 'black')
         pylab.title("FFT onda sinusoidale")
         if(bool_focus_FFT):
             pylab.xlim(FFOCUS)
         else:
             pylab.xlim(FLIM)
         pylab.xlabel("Frequenza [Hz]")
+        pylab.minorticks_on()
+        pylab.grid(color = "gray")
+        pylab.grid(b=True, which='major', color='#666666', linestyle='-')
+        pylab.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
         pylab.ylabel("Ampiezza [u.a.]")
         pylab.show()       
     if(bool_log):
-        pylab.errorbar(f, tra, marker = '.', linestyle = '-', color = 'black')
+        pylab.errorbar(f, tra, linestyle = '-', color = 'black')
         pylab.title("FFT onda sinusoidale")
         if(bool_focus_FFT):
             pylab.xlim(FFOCUS)
         else:
             pylab.xlim(FLIM)
         pylab.xlabel("Frequenza [Hz]")
+        pylab.minorticks_on()
+        pylab.grid(color = "gray")
+        pylab.grid(b=True, which='major', color='#666666', linestyle='-')
+        pylab.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
         pylab.ylabel("Ampiezza [u.a.]")
         pylab.semilogy()
         pylab.show()               
     if(bool_dB):
-        pylab.errorbar(f, tradB, marker = '.', linestyle = '-', color = 'black')
+        pylab.errorbar(f, tradB, linestyle = '-', color = 'black')
         pylab.title("FFT onda sinusoidale")
         if(bool_focus_FFT):
             pylab.xlim(FFOCUS)
         else:
             pylab.xlim(FLIM)
         pylab.xlabel("Frequenza [Hz]")
+        pylab.minorticks_on()
+        pylab.grid(color = "gray")
+        pylab.grid(b=True, which='major', color='#666666', linestyle='-')
+        pylab.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
         pylab.ylabel("Ampiezza [u.a.]")
         pylab.show() 
-if(bool_fit):
+if(bool_fit):##mancano residui
     popt, pcov = curve_fit(f_sin, t, y, par_sin1, dy, absolute_sigma = False)
     omega0, phi0, q0, A0 = popt
     domega0, dphi0, dq0, dA0 = pylab.sqrt(pcov.diagonal())
@@ -220,6 +260,10 @@ if(bool_fit):
     pylab.ylabel("d.d.p. [digit]")
     x_plot = numpy.linspace(*TLIM, 1000)
     pylab.plot(x_plot, f_sin(x_plot, *popt), color = "red")
+    pylab.minorticks_on()
+    pylab.grid(color = "gray")
+    pylab.grid(b=True, which='major', color='#666666', linestyle='-')
+    pylab.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
     print("Quindi f aspettata è %f " %(omega0/(2*pylab.pi)))
     pylab.show()
 if(bool_filter_low):
@@ -238,10 +282,30 @@ if(bool_filter_low):
     ampiezza_t = abs(numpy.fft.irfft(gfilter))
     pylab.errorbar(t, ampiezza_t, marker = '.', color = 'black')
     pylab.show()
-    new_tra = abs(numpy.fft.rfft(ampiezza_t))
+    C_NORMAL =  f_intGauss(ampiezza_t, (max(ampiezza_t) - min(ampiezza_t))/2., sigma0, min(ampiezza_t), max(ampiezza_t))
+    if(bool_window):
+        y_fin = numpy.zeros(len(ampiezza_t))
+        for i in range(len(ampiezza_t)):
+            y_fin[i] = ampiezza_t[i] *f_Gauss(ampiezza_t[i], (max(ampiezza_t) - min(ampiezza_t))/2, sigma0, C_NORMAL) 
+            new_tra = abs(numpy.fft.rfft(y_fin))
+    else:
+        new_tra = abs(numpy.fft.rfft(ampiezza_t))
     pylab.errorbar(f, new_tra, color = 'black')
+    pylab.minorticks_on()
+    pylab.grid(color = "gray")
+    pylab.grid(b=True, which='major', color='#666666', linestyle='-')
+    pylab.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
     pylab.show()
+    pylab.grid(color = "gray")
+    pylab.grid(b=True, which='major', color='#666666', linestyle='-')
+    pylab.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
+    pylab.minorticks_on()
     new_tra_dB = max(new_tra)*20*pylab.log(new_tra/max(new_tra))
     pylab.errorbar(f, new_tra_dB, color = 'black')
     pylab.show()
 
+##metti griglie, titoli, qualche didascalia se serve
+##fai stmpare info utili, guarda lezione sbobinata
+##vedi se riesci a metterci una banda d'errore in modo analitico:
+##pensavo di fare random 10000 fft con valori entro le incertezze
+##e fare una sorta di nuvola di densità a cui sovrapporre la mia funzione
